@@ -4,11 +4,11 @@ const userSchema = new mongoose.Schema({
         type: String, 
         required: true,
     },
-    email: {
+    age: {
         type: String,
         required: true,
     },
-    phone: {
+    grade: {
         type: String,
         required: true,
     },

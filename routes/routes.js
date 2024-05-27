@@ -37,6 +37,16 @@ router.get('/add', (req, res) => {
     res.render('add_user', {title: "Add Users"});
 });
 
+//about page
+router.get('/about', (req, res) => {
+    res.render('about', {title: "About"});
+});
+
+//contact page
+router.get('/contact', (req, res) => {
+    res.render('contact', {title: "Contact"});
+});
+
 //edit user page
 router.get('/edit/:id', async (req, res) => {
     try{
@@ -60,8 +70,8 @@ router.post('/add', upload, async (req, res)=> {
     try{
         const user = new User({
             name: req.body.name,
-            email: req.body.email,
-            phone: req.body.phone,
+            age: req.body.age,
+            grade: req.body.grade,
             image: req.file.filename,   
         });
 
@@ -95,8 +105,8 @@ router.post('/update/:id', upload, async (req, res) => {
         }
         await User.findByIdAndUpdate(id, {
             name: req.body.name,
-            email: req.body.email,
-            phone: req.body.phone,
+            age: req.body.age,
+            grade: req.body.grade,
             image: new_img,
         });
 

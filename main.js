@@ -7,6 +7,8 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT;
 
+app.use(express.static('public'));
+
 // database connection
 mongoose.connect(process.env.DB_URI)
   .then(() => {
